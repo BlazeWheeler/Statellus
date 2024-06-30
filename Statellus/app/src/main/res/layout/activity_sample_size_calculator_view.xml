@@ -1,0 +1,716 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    This XML layout defines the UI for a screen displaying input fields and buttons
+    for data manipulation related to Measures of Central Tendency.
+-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="view.SampleSizeCalculatorView">
+
+    <!--
+        A ConstraintLayout is used as the root layout for better flexibility
+        in positioning UI elements.
+    -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <!--
+            TextView displaying the title of the activity.
+        -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/activity_title"
+            android:text="@string/statistics_title"
+            android:singleLine="true"
+            android:textSize="@dimen/_25sdp"
+            android:textColor="@color/lavender"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/lato_semi_bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5" />
+
+        <!--
+            TextView displaying the description of the activity.
+        -->
+        <TextView
+            android:id="@+id/activity_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:text="@string/sample_size_calculator_title"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_15sdp"
+            app:layout_constraintBottom_toTopOf="@id/row_1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/activity_title"
+            tools:ignore="TextSizeCheck" />
+
+        <!-- LinearLayout for the first row -->
+
+
+        <LinearLayout
+            android:id="@+id/row_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="0dp"
+            android:padding="10dp"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/activity_desc"
+            tools:ignore="MissingConstraints">
+
+            <!-- CardView containing Single Number Fib Number -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/sample_size_card_view"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                app:cardElevation="5dp"
+                app:cardCornerRadius="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <!-- Title -->
+                    <TextView
+                        android:id="@+id/card_one_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/lato_semi_bold"
+                        android:text="@string/sample_size_title"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_15sdp"
+                        tools:ignore="TextSizeCheck" />
+
+
+
+                    <!-- Sample Mean -->
+                    <ru.noties.jlatexmath.JLatexMathView
+                        android:id="@+id/j_latex_math_view_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/card_one_title"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center"
+
+                        android:background="@color/white"
+                        android:layout_marginTop="@dimen/_1sdp"
+                        app:jlmv_textColor="@color/black"
+                        app:jlmv_textSize="@dimen/_25sdp" />
+
+                    <TextView
+                        android:id="@+id/sample_size_solution_text_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/j_latex_math_view_1"
+                        android:layout_marginTop="0dp"
+                        android:fontFamily="@font/cmr10_font"
+                        android:gravity="center"
+                        android:padding="@dimen/_10sdp"
+                        android:text=""
+
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_20sdp" />
+
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- CardView contains Fib Sequence Solution -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/margin_of_error_card_view"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                app:cardElevation="5dp"
+                app:cardCornerRadius="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <!--Title-->
+                    <TextView
+                        android:id="@+id/card_two_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/lato_semi_bold"
+                        android:text="@string/margin_of_error_title"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_15sdp"
+                        tools:ignore="TextSizeCheck" />
+
+                    <!--Population Mean-->
+                    <ru.noties.jlatexmath.JLatexMathView
+                        android:id="@+id/j_latex_math_view_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/card_two_title"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center"
+                        android:background="@color/white"
+
+                        app:jlmv_textColor="@color/black"
+                        app:jlmv_textSize="@dimen/_25sdp" />
+
+                    <TextView
+                        android:id="@+id/margin_of_error_solution_text_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/j_latex_math_view_2"
+                        android:padding="@dimen/_10sdp"
+                        android:text=""
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_20sdp"
+                        android:fontFamily="@font/cmr10_font"
+                        />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+
+
+        <!-- LinearLayout for the second row -->
+
+
+        <!--LinearLayout containing input fields.-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/row_3"
+            android:orientation="horizontal"
+
+            android:padding="0dp"
+
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/row_1">
+
+            <!--
+                RelativeLayout wrapping the input fields.
+            -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+
+                >
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/radio_group"
+                    android:orientation="horizontal"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    >
+
+                    <RadioButton
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sample_size_title"
+                        android:id="@+id/sample_size_radio_button"
+                        android:button="@android:color/transparent"
+                        android:background="@drawable/radio_selector"
+                        android:textColor="@drawable/radio_text_color"
+                        android:elevation="4dp"
+                        android:layout_weight="1"
+                        android:padding="16dp"
+                        android:layout_margin="16dp" />
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/margin_of_error_title"
+                        android:id="@+id/margin_of_error_radio_button"
+                        android:button="@android:color/transparent"
+                        android:background="@drawable/radio_selector"
+                        android:textColor="@drawable/radio_text_color"
+                        android:elevation="4dp"
+                        android:padding="16dp"
+                        android:layout_margin="16dp" />
+                </RadioGroup>
+            </RelativeLayout>
+        </LinearLayout>
+
+
+        <!--LinearLayout containing input fields.-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_190sdp"
+            android:id="@+id/row_4"
+            android:orientation="horizontal"
+            android:layout_marginTop="0dp"
+            android:padding="5dp"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/row_3">
+
+            <!-- CardView containing input fields.-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/margin_of_error_input_card_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                android:layout_weight="1"
+                app:cardElevation="5dp"
+                app:cardCornerRadius="20dp"
+                android:layout_marginBottom="@dimen/_20sdp"
+
+                >
+
+                <!--
+                    RelativeLayout wrapping the input fields.
+                -->
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    >
+
+                    <!--
+                        TextView displaying the title for input fields.
+                    -->
+                    <TextView
+                        android:id="@+id/card_three_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/lato_semi_bold"
+                        android:text="@string/enter_data_title"
+                        android:textColor="@color/lavender"
+                        android:textSize="@dimen/_15sdp"
+                        tools:ignore="TextSizeCheck" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/card_three_row_1"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:layout_below="@+id/card_three_title">
+
+                        <TextView
+                            android:id="@+id/confidence_level_margin_of_error_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_1sdp"
+                            android:layout_below="@id/card_four_title"
+                            android:fontFamily="@font/cmr10_font"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/confidence_level_title"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_25sdp"
+                            tools:ignore="TextSizeCheck" />
+
+                        <Spinner
+                            android:id="@+id/confidence_level_spinner_margin_error"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:entries="@array/sample_size_options"
+                            android:layout_marginLeft="@dimen/_5sdp"
+                            android:background="@drawable/custom_input"
+                            android:layout_marginRight="@dimen/_10sdp"
+                            android:textAlignment="center"
+                            android:fontFamily="@font/lato_semi_bold"
+                            android:popupBackground="@drawable/gradient_border"
+                            style="@style/SpinnerTextStyle">
+
+                        </Spinner>
+
+
+
+
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/card_three_row_2"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:layout_below="@+id/card_three_row_1">
+
+
+                        <TextView
+                            android:id="@+id/sample_size_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_1sdp"
+                            android:layout_below="@id/card_four_title"
+                            android:fontFamily="@font/cmr10_font"
+                            android:text="@string/sample_size_input_title"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_23sdp"
+                            tools:ignore="TextSizeCheck" />
+
+                        <EditText
+                            android:id="@+id/sample_size_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_70sdp"
+                            android:layout_marginRight="@dimen/_10sdp"
+                            android:background="@drawable/custom_input"
+                            android:digits="0123456789-."
+                            android:ems="4"
+                            android:fontFamily="@font/lato_semi_bold"
+                            android:hint="@string/percent"
+                            android:importantForAutofill="no"
+                            android:inputType="number"
+                            android:maxLength="4"
+                            android:singleLine="true"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textColorHint="#78909C"
+                            android:textSize="@dimen/_20sdp"
+
+                            app:layout_constraintBottom_toBottomOf="parent"
+
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="TextSizeCheck,TextContrastCheck" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/card_three_row_3"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:layout_below="@+id/card_three_row_2">
+
+
+                        <TextView
+                            android:id="@+id/population_proportion_title_margin_of_error"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_1sdp"
+                            android:layout_below="@id/card_four_title"
+                            android:fontFamily="@font/cmr10_font"
+                            android:text="@string/population_proportion_title"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_25sdp"
+                            tools:ignore="TextSizeCheck"
+                            android:layout_marginBottom="@dimen/_20sdp"
+                            />
+
+
+                        <EditText
+                            android:id="@+id/population_proportion_input_margin_of_error"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_13sdp"
+                            android:layout_marginRight="@dimen/_10sdp"
+                            android:background="@drawable/custom_input"
+                            android:digits="0123456789-."
+                            android:ems="4"
+                            android:fontFamily="@font/lato_semi_bold"
+                            android:hint="@string/percent"
+                            android:importantForAutofill="no"
+                            android:inputType="number"
+
+                            android:singleLine="true"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textColorHint="#78909C"
+                            android:textSize="@dimen/_20sdp"
+                            android:maxLength="4"
+                            app:layout_constraintBottom_toBottomOf="parent"
+
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="TextSizeCheck,TextContrastCheck" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/row_5"
+            android:orientation="horizontal"
+            android:layout_marginTop="0dp"
+            android:padding="5dp"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/row_3">
+
+            <!-- CardView containing input fields.-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/sample_size_input_card_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                android:layout_weight="1"
+                app:cardElevation="5dp"
+                app:cardCornerRadius="20dp">
+
+                <!--
+                    RelativeLayout wrapping the input fields.
+                -->
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/card_four_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/lato_semi_bold"
+                        android:text="@string/enter_data_title"
+                        android:textColor="@color/lavender"
+                        android:textSize="@dimen/_15sdp"
+                        tools:ignore="TextSizeCheck" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/card_four_row_1"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:layout_below="@+id/card_four_title">
+
+
+
+                        <TextView
+                            android:id="@+id/confidence_level_input_sample_size"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/_1sdp"
+                            android:layout_below="@id/card_four_title"
+                            android:fontFamily="@font/cmr10_font"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/confidence_level_title"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_25sdp"
+                            tools:ignore="TextSizeCheck" />
+
+
+                        <Spinner
+                            android:id="@+id/confidence_level_spinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:entries="@array/sample_size_options"
+                            android:layout_marginLeft="@dimen/_5sdp"
+                            android:background="@drawable/custom_input"
+                            android:layout_marginRight="@dimen/_10sdp"
+                            android:textAlignment="center"
+                            android:fontFamily="@font/lato_semi_bold"
+                            android:popupBackground="@drawable/gradient_border"
+                            style="@style/SpinnerTextStyle"
+
+                            >
+
+                        </Spinner>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/card_four_row_2"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:layout_below="@+id/card_four_row_1">
+                        <TextView
+                            android:id="@+id/margin_of_error_input_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_1sdp"
+                            android:layout_below="@id/card_four_title"
+                            android:fontFamily="@font/cmr10_font"
+                            android:text="@string/margin_of_error_input_title"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_25sdp"
+                            tools:ignore="TextSizeCheck" />
+
+
+                        <EditText
+                            android:id="@+id/margin_of_error_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_15sdp"
+                            android:layout_marginRight="@dimen/_10sdp"
+                            android:background="@drawable/custom_input"
+                            android:digits="0123456789-."
+                            android:ems="4"
+                            android:fontFamily="@font/lato_semi_bold"
+                            android:hint="@string/percent"
+                            android:importantForAutofill="no"
+                            android:inputType="number"
+                            android:maxLength="4"
+                            android:singleLine="true"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textColorHint="#78909C"
+                            android:textSize="@dimen/_20sdp"
+
+                            app:layout_constraintBottom_toBottomOf="parent"
+
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="TextSizeCheck,TextContrastCheck" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/card_four_row_3"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:layout_below="@+id/card_four_row_2">
+
+                        <TextView
+                            android:id="@+id/population_proportion_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_1sdp"
+                            android:layout_below="@id/card_four_title"
+                            android:fontFamily="@font/cmr10_font"
+                            android:text="@string/population_proportion_title"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_25sdp"
+                            android:layout_marginBottom="@dimen/_20sdp"
+                            tools:ignore="TextSizeCheck" />
+
+                        <EditText
+                            android:id="@+id/population_proportion_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:background="@drawable/custom_input"
+                            android:digits="0123456789-."
+                            android:ems="4"
+                            android:fontFamily="@font/lato_semi_bold"
+                            android:hint="@string/percent"
+                            android:importantForAutofill="no"
+                            android:inputType="number"
+                            android:textAlignment="center"
+                            android:maxLength="4"
+                            android:layout_marginRight="@dimen/_10sdp"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textColorHint="#78909C"
+                            android:textSize="@dimen/_20sdp"
+
+                            app:layout_constraintBottom_toBottomOf="parent"
+
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="TextSizeCheck,TextContrastCheck" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+
+
+
+
+        <!--
+            LinearLayout containing buttons for data manipulation.
+        -->
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="4.0dip"
+            android:paddingTop="20.0dip"
+            android:paddingRight="4.0dip"
+            android:paddingBottom="20.0dip"
+            android:layout_centerHorizontal="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/row_4">
+
+            <!--
+                Button for initiating calculation.
+            -->
+            <Button
+                android:id="@+id/calc_button"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.0"
+                android:text="@string/calculate_btn"
+                android:background="@drawable/button_selector"
+                android:textColor="@color/white"
+                android:layout_marginStart="20dp"
+                android:textSize="@dimen/_15sdp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                tools:ignore="ButtonStyle,TextSizeCheck" />
+
+            <!--
+                Button for resetting input fields.
+            -->
+            <Button
+                android:id="@+id/reset_button"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_selector"
+                android:text="@string/reset_btn"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15sdp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:layout_constraintEnd_toEndOf="@id/cardViewOne"
+                tools:ignore="ButtonStyle,TextSizeCheck" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

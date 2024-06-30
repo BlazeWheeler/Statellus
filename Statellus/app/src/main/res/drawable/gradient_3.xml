@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Drawable resource defining a gradient shape.
+-->
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!--
+        Gradient defining the start and end colors along with the angle.
+    -->
+    <gradient android:startColor="#EC3CAB"
+        android:endColor="#0B40C5"
+        android:angle="45">
+    </gradient>
+</shape>

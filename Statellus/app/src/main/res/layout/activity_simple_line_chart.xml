@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Layout for displaying a simple line chart with input fields and buttons.
+-->
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.SimpleLineChartActivity">
+
+    <!-- ConstraintLayout for organizing views -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <!-- TextView displaying the activity title -->
+        <TextView
+            android:id="@+id/activity_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/data_visualization_title"
+            android:singleLine="true"
+            android:textSize="@dimen/_25sdp"
+            android:textColor="@color/lavender"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/lato_semi_bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5" />
+
+        <!-- TextView displaying the activity description -->
+        <TextView
+            android:id="@+id/activity_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pie_chart_title"
+            android:textSize="@dimen/_15sdp"
+            android:textColor="@color/black"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            app:layout_constraintTop_toBottomOf="@id/activity_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="TextSizeCheck" />
+
+        <!-- LinearLayout for the first row -->
+        <LinearLayout
+            android:id="@+id/row_1"
+            android:layout_width="0dp"
+            android:layout_height="350dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="0dp"
+            android:padding="10dp"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/activity_desc"
+            tools:ignore="MissingConstraints">
+
+            <!-- CardView containing the LineChart -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_one"
+                android:layout_width="0dp"
+                android:layout_height="310dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                app:cardElevation="5dp"
+                app:cardCornerRadius="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <!-- LineChart -->
+                    <com.github.mikephil.charting.charts.LineChart
+                        android:id="@+id/line_chart"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <!-- ImageView for no data -->
+                    <ImageView
+                        android:id="@+id/no_data_img"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/no_data_icon"
+                        android:contentDescription="@string/no_data_content_description" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <!-- LinearLayout for the second row -->
+        <LinearLayout
+            android:id="@+id/row_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="0dp"
+            android:padding="5dp"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/row_1">
+
+            <!-- CardView containing EditText -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                android:layout_weight="1"
+                app:cardElevation="5dp"
+                app:cardCornerRadius="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <!-- TextView for EditText title -->
+                    <TextView
+                        android:id="@+id/card_two_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/lato_semi_bold"
+                        android:text="@string/enter_data_title"
+                        android:textColor="@color/lavender"
+                        android:textSize="@dimen/_15sdp"
+                        tools:ignore="TextSizeCheck" />
+
+                    <!-- EditText -->
+                    <EditText
+                        android:id="@+id/sample_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_42sdp"
+                        android:layout_below="@+id/card_two_title"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="30dp"
+                        android:background="@drawable/custom_input"
+                        android:digits="0123456789.,-"
+                        android:ems="4"
+                        android:fontFamily="@font/lato_semi_bold"
+                        android:hint="@string/enter_sample_title"
+                        android:importantForAutofill="no"
+                        android:inputType="numberDecimal"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:singleLine="false"
+                        android:textColor="@color/black"
+                        android:textColorHint="#78909C"
+                        android:textSize="@dimen/_12sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="TextSizeCheck,TextContrastCheck" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <!-- LinearLayout for buttons -->
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="4.0dip"
+            android:paddingTop="20.0dip"
+            android:paddingRight="4.0dip"
+            android:paddingBottom="20.0dip"
+            android:layout_centerHorizontal="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/row_2">
+
+            <!-- Button for calculation -->
+            <Button
+                android:id="@+id/calc_button"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.0"
+                android:text="@string/calculate_btn"
+                android:background="@drawable/button_selector"
+                android:textColor="@color/white"
+                android:layout_marginStart="20dp"
+                android:textSize="@dimen/_15sdp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                tools:ignore="ButtonStyle,TextSizeCheck" />
+
+            <!--
+                Button for resetting input fields.
+            -->
+            <Button
+                android:id="@+id/reset_button"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_selector"
+                android:text="@string/reset_btn"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15sdp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:layout_constraintEnd_toEndOf="@id/cardViewOne"
+                tools:ignore="ButtonStyle,TextSizeCheck" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

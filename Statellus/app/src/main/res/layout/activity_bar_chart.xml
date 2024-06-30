@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    This XML layout defines the UI for a screen displaying a Bar Chart
+    along with input fields and buttons for data manipulation.
+-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="view.BarChartActivity">
+
+    <!--
+        A ConstraintLayout is used as the root layout for better flexibility
+        in positioning UI elements.
+    -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--
+            TextView displaying the title of the activity.
+        -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/activity_title"
+            android:text="@string/data_visualization_title"
+            android:singleLine="true"
+            android:textSize="@dimen/_25sdp"
+            android:textColor="@color/lavender"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/lato_semi_bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5" />
+
+        <!--
+            TextView displaying the description of the activity.
+        -->
+        <TextView
+            android:id="@+id/activity_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:text="@string/bar_chart_title"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_15sdp"
+            app:layout_constraintBottom_toTopOf="@id/row1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/activity_title"
+            tools:ignore="TextSizeCheck" />
+
+        <!--
+            LinearLayout containing the BarChart.
+        -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="335dp"
+            android:id="@+id/row1"
+            android:orientation="horizontal"
+            android:layout_marginTop="0dp"
+            android:padding="10dp"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/activity_desc"
+            tools:ignore="MissingConstraints">
+
+            <!--
+                CardView containing the BarChart.
+            -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="300dp"
+                android:id="@+id/cardViewOne"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                app:cardElevation="5dp"
+                app:cardCornerRadius="20dp">
+
+                <!--
+                    RelativeLayout wrapping the BarChart and No Data Image.
+                -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <!--
+                        BarChart to display data visualization.
+                    -->
+                    <com.github.mikephil.charting.charts.BarChart
+                        android:id="@+id/bar_chart"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <!--
+                        ImageView to display when there's no data.
+                    -->
+                    <ImageView
+                        android:layout_width="@dimen/_32sdp"
+                        android:layout_height="@dimen/_32sdp"
+                        android:id="@+id/no_data_img"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/no_data_icon" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <!--
+            LinearLayout containing input fields.
+        -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_210sdp"
+            android:id="@+id/row_2"
+            android:orientation="horizontal"
+            android:layout_marginTop="0dp"
+            android:padding="5dp"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/row1">
+
+            <!--
+                CardView containing input fields.
+            -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_190sdp"
+                android:layout_margin="@dimen/_10sdp"
+                android:layout_weight="1"
+                app:cardElevation="5dp"
+                app:cardCornerRadius="20dp">
+
+                <!--
+                    RelativeLayout wrapping the input fields.
+                -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_180sdp">
+
+                    <!--
+                        TextView displaying the title for input fields.
+                    -->
+                    <TextView
+                        android:id="@+id/card_two_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/lato_semi_bold"
+                        android:text="@string/enter_data_title"
+                        android:textColor="@color/lavender"
+                        android:textSize="@dimen/_15sdp"
+                        tools:ignore="TextSizeCheck" />
+
+                    <!--
+                        EditText for entering data.
+                    -->
+                    <EditText
+                        android:id="@+id/sample_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/card_two_title"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="30dp"
+                        android:background="@drawable/custom_input"
+                        android:digits="0123456789.,-"
+                        android:ems="4"
+                        android:fontFamily="@font/lato_semi_bold"
+                        android:gravity="top"
+                        android:hint="@string/enter_sample_title"
+                        android:importantForAutofill="no"
+                        android:inputType="numberDecimal"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:singleLine="false"
+                        android:textColor="@color/black"
+                        android:textColorHint="#78909C"
+                        android:textSize="@dimen/_15sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="TextSizeCheck,TextContrastCheck" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <!--
+            LinearLayout containing buttons for data manipulation.
+        -->
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="4.0dip"
+            android:paddingTop="20.0dip"
+            android:paddingRight="4.0dip"
+            android:paddingBottom="20.0dip"
+            android:layout_centerHorizontal="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/row_2">
+
+            <!--
+                Button for initiating calculation.
+            -->
+            <Button
+                android:id="@+id/calc_button"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.0"
+                android:text="@string/calculate_btn"
+                android:background="@drawable/button_selector"
+                android:textColor="@color/white"
+                android:layout_marginStart="20dp"
+                android:textSize="@dimen/_15sdp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                tools:ignore="ButtonStyle,TextSizeCheck" />
+
+            <!--
+                Button for resetting input fields.
+            -->
+            <Button
+                android:id="@+id/reset_button"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_selector"
+                android:text="@string/reset_btn"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15sdp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:layout_constraintEnd_toEndOf="@id/cardViewOne"
+                tools:ignore="ButtonStyle,TextSizeCheck" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

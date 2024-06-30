@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Layout for displaying a list of data visualization activities.
+-->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="view.StatisticsCalcListView">
+
+    <!--
+        ConstraintLayout for organizing views in a flexible manner.
+    -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <!--
+            TextView displaying the application name.
+        -->
+        <TextView
+            android:id="@+id/app_name"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_37sdp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/lato_semi_bold"
+            android:text="@string/app_name"
+            android:textColor="@color/lavender"
+            android:textSize="@dimen/_25sdp"
+            app:layout_constraintEnd_toStartOf="@+id/app_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--
+            TextView displaying the description of the activity.
+        -->
+        <TextView
+            android:id="@+id/activity_desc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/visualize_data_title"
+            android:textColor="@color/lavender"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintEnd_toStartOf="@+id/app_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/app_name"
+            tools:ignore="TextSizeCheck" />
+
+        <!--
+            ImageView displaying the application icon.
+        -->
+        <ImageView
+            android:id="@+id/app_icon"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_100sdp"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="@string/app_icon_cont_desc"
+            android:src="@drawable/statellus_app_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/app_name"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--
+        ListView for displaying the list of data visualization activities.
+    -->
+    <ListView
+        android:id="@+id/stats_calc_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/constraintLayout1"
+        android:layout_marginTop="5dp" />
+
+</RelativeLayout>

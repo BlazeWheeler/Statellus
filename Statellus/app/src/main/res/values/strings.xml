@@ -1,0 +1,281 @@
+<resources>
+
+    <!-- App Level -->
+    <string name="app_name">Statellus</string>
+    <string name="app_desc">Calculate from P to ∀x</string>
+    <string name="calculate_btn">Calculate</string>
+    <string name="reset_btn">Reset</string>
+    <string name="mp_chart_no_data">No values entered.</string>
+    <string name="blank_string">0</string>
+    <string name="set_a_title">Set A</string>
+    <string name="set_b_title">Set B</string>
+    <string name="empty_input_error">Whoops! Please enter some values.</string>
+    <string name="invalid_input_message">Whoops! Something is not right. Please check if your data is entered correctly.</string>
+    <string name="set_operations_title">Set Operations</string>
+
+    <!-- Activity Desc -->
+    <string name="bar_chart_title">Bar Chart</string>
+    <string name="pie_chart_title">Pie Chart</string>
+    <string name="box_and_whisker_title">Box And Whisker Plot</string>
+    <string name="simple_plot_title">Simple Plot</string>
+    <string name="venn_diagram_title">Venn Diagram</string>
+    <string name="measure_of_ct_title">Measures of Central Tendency</string>
+    <string name="measure_of_spread_title">Comprehensive Measures of Data Spread</string>
+
+
+    <!-- Venn Diagram -->
+    <string name="venn_set_a_text">A = {∅}</string>
+    <string name="venn_set_b_text">B = {∅}</string>
+    <string name="venn_set_intersection_text">A ∩ B = {∅}</string>
+    <string name="venn_set_union_text">A ∪ B = {∅}</string>
+    <string name="cartesian_product">A x B = {∅}</string>
+
+
+    <!-- Activity Titles -->
+    <string name="data_visualization_title">Data Visualization</string>
+    <string name="visualize_data_title">Visualize Data</string>
+    <string name="statistics_title">Statistics</string>
+    <string name="probability_title">Probability</string>
+    <string name="discrete_math_title">Discrete Math</string>
+    <string name="calculus_title">Calculus</string>
+    <string name="graphing_title">Graphing</string>
+
+
+    <!-- In Activity Titles -->
+
+    <string name="enter_min_title">MIN</string>
+    <string name="enter_q1_title">Q1</string>
+    <string name="enter_med_title">MED</string>
+    <string name="enter_q3_title">Q3</string>
+    <string name="enter_max_title">MAX</string>
+    <string name="enter_sample_title">Enter comma separated numeric values </string>
+    <string name="enter_data_title">Enter Data </string>
+    <string name="five_num_sum_title">Five Number Summary </string>
+    <string name="simple_line_chart_title">Simple Line Chart</string>
+    <string name="onion_chart_title">Onion Chart Title</string>
+    <string name="horizontal_bar_chart_title">Horizontal Bar Chart</string>
+    <string name="stem_and_leaf_plot_title">Stem And Leaf Plot</string>
+    <string name="fibonacci_title">Fibonacci Calculator</string>
+    <string name="number_sequence_title">Number Sequence Calculator</string>
+
+
+    <!-- Discrete Math ListView -->
+    <string-array name="discrete_math_titles">
+        <item>Permutations</item>
+        <item>Combinations</item>
+        <item>Series of Events</item>
+        <item>Fibonacci Sequence</item>
+        <item>Number Sequence</item>
+        <item>Z-Score</item>
+        <item>list item</item>
+        <item>list item</item>
+    </string-array>
+
+
+    <!-- Probability ListView -->
+    <string-array name="probability_titles">
+        <item>Bayes\' rule</item>
+        <item>Series of Events</item>
+        <item>Binomial Distribution</item>
+        <item>Permutations</item>
+        <item>Even Permutations</item>
+        <item>Odd Permutations</item>
+        <item>Circular Permutation</item>
+        <item>Combinations</item>
+        <item>Combination Replacement</item>
+    </string-array>
+
+    <!-- Visualize Data ListView -->
+    <string-array name="visualize_data_titles">
+        <item>Bar Chart</item>
+        <item>Box and Whisker Plot</item>
+        <item>Horizontal Bar Chart</item>
+        <item>Stem and Leaf Plot</item>
+        <item>Pie Chart</item>
+        <item>Onion Diagram</item>
+        <item>Venn Diagram</item>
+        <item>Simple Line Chart</item>
+    </string-array>
+
+
+    <!-- Statistics ListView -->
+    <string-array name="statistics_titles">
+        <item>Measures of Central Tendency</item>
+        <item>Comprehensive Measures of Data Spread</item>
+        <item>Z-Score</item>
+        <item>Sample Size Calculator</item>
+        <item>Set Operations</item>
+        <item>Probability</item>
+        <item>Bayes’ Rule</item>
+        <item>Discrete Probability Distributions</item>
+        <item>Special Discrete Probability Distributions</item>
+        <item>Continuous Probability Distributions</item>
+        <item>Central Limit Theorem</item>
+        <item>Confidence Intervals</item>
+        <item>Hypothesis Testing </item>
+    </string-array>
+
+    <!-- Calculus ListView -->
+    <string-array name="calculus_titles">
+        <item>Calculus List Item</item>
+        <item>Calculus List Item</item>
+        <item>Calculus List Item</item>
+        <item>Calculus List Item</item>
+        <item>Calculus List Item</item>
+        <item>Calculus List Item</item>
+        <item>Calculus List Item</item>
+        <item>Calculus List Item</item>
+    </string-array>
+
+    <!-- Graphing ListView -->
+    <string-array name="graphing_titles">
+        <item>Graphing List Item</item>
+        <item>Graphing List Item</item>
+        <item>Graphing List Item</item>
+        <item>Graphing List Item</item>
+        <item>Graphing List Item</item>
+        <item>Graphing List Item</item>
+        <item>Graphing List Item</item>
+        <item>Graphing List Item</item>
+        <item>Graphing List Item</item>
+    </string-array>
+
+
+    <!-- Bayes Theorem Strings -->
+    <string name="bayes_theorem_title">Bayes\' Theorem</string>
+    <string name="p_a">P(A)</string>
+    <string name="p_b">P(B)</string>
+    <string name="p_b_a">P(B|A)</string>
+    <string name="p_a_b">P(A|B)</string>
+
+    <!-- Sample Size Calculator Strings -->
+    <string name="sample_size_calculator_title">Sample Size Calculator </string>
+    <string name="sample_size_title">Sample Size</string>
+    <string name="margin_of_error_input_title">Margin of Error:</string>
+    <string name="margin_of_error_title">Margin of Error</string>
+    <string name="confidence_level_title">Confidence Level: </string>
+    <string name="population_proportion_title">Pop. Proportion: </string>
+    <string name="population_size_title">Population Size: </string>
+    <string name="sample_size_input_title">Sample Size: </string>
+    <string-array name="sample_size_options">
+        <item>70 %</item>
+        <item>75 %</item>
+        <item>80 %</item>
+        <item>85 %</item>
+        <item>90 %</item>
+        <item>95 %</item>
+        <item>98 %</item>
+        <item>99 %</item>
+    </string-array>
+
+
+    <!-- Z Score Strings -->
+    <string name="z_score_title">Z-score Calculator</string>
+    <string name="z_score">Z-score</string>
+    <string name="raw_score_title">Raw Score</string>
+    <string name="population_mean_title">Population Mean</string>
+    <string name="standard_deviation_title">Standard Deviation</string>
+    <string name="p_x_less_than_z">P(x &lt; Z) = </string>
+    <string name="p_x_greater_than_z">P(x &gt; Z) = </string>
+    <string name="p_between_zero_and_z">P(0 to Z or Z to 0) = </string>
+    <string name="p_between_minus_z_and_z">P(Z&lt;x&lt;Z) = </string>
+    <string name="p_less_than_minus_z_or_greater_than_z">P(x&lt;-Z or x&gt;Z) = </string>
+    <string name="z_title">Z = </string>
+
+    <!-- Fibonacci Strings -->
+    <string name="fibonacci_single"> Generate Single Number </string>
+    <string name="fibonacci_sequence">Generate Sequence</string>
+    <string name="single_title">Single Number</string>
+    <string name="sequence_title">Sequence</string>
+    <string name="n_title">n</string>
+
+    <!-- Number Sequence Strings -->
+    <string name="arithmetic_sequence_title">Arithmetic Sequence</string>
+    <string name="geometric_sequence_title">Geometric Sequence</string>
+    <string name="first_term_title">First Term</string>
+    <string name="common_ratio_title">Common Ratio</string>
+    <string name="number_of_terms_title">Number of Terms</string>
+    <string name="common_difference_title">Common Difference</string>
+
+    <string name="r_title">r</string>
+    <string name="a_title">a</string>
+    <string name="d_title">d</string>
+    <string name="x_title">x</string>
+    <string name="pop_mean_title">μ</string>
+    <string name="standard_dev_title">σ</string>
+
+    <string name="n_bold_title">n</string>
+    <string name="a_sub_one">a₁</string>
+    <string name="n_sub_one">n₁</string>
+    <string name="n_sub_two">n₂</string>
+    <string name="percent">%</string>
+
+
+    <!-- Image Content Desc -->
+    <string name="app_icon_cont_desc">Statellus App Icon</string>
+    <string name="statistics_image_cont_desc">Icon Conveying Statistics</string>
+    <string name="probability_image_cont_desc">Icon Conveying Probability</string>
+    <string name="discrete_math_image_cont_desc">Icon Conveying Discrete Math</string>
+    <string name="visualize_data_image_cont_desc">Icon Conveying Data Visualization</string>
+    <string name="calculus_image_cont_desc">Icon Conveying Calculus</string>
+    <string name="graphing_image_cont_desc">Icon Conveying Graphing</string>
+
+    <!-- TO BE ORGANIZED -->
+    <string name="mean_title">Mean:\n</string>
+    <string name="median_title">Median:\n</string>
+    <string name="mode_title">Mode:\n</string>
+    <string name="list_view_holder">ListView Item</string>
+    <string name="no_data_content_description">Image that conveys there is no data entered.</string>
+    <string name="graph_title">Graph</string>
+    <string name="venn_diagram_cont_desc">Image that displays a venn diagram.</string>
+    <string name="enter_set_a">Enter set A</string>
+    <string name="enter_set_b">Enter Set B</string>
+    <string name="data_spread_title">Comprehensive Measures of Data Spread"</string>
+    <string name="sample_title">Sample</string>
+    <string name="population_title">Population</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="lorem_ipsum">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
+        volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus
+        dui nec risus. Maecenas non sodales nisi, vel dictum dolor. Class aptent taciti sociosqu ad
+        litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse blandit eleifend
+        diam, vel rutrum tellus vulputate quis. Aliquam eget libero aliquet, imperdiet nisl a,
+        ornare ex. Sed rhoncus est ut libero porta lobortis. Fusce in dictum tellus.\n\n
+        Suspendisse interdum ornare ante. Aliquam nec cursus lorem. Morbi id magna felis. Vivamus
+        egestas, est a condimentum egestas, turpis nisl iaculis ipsum, in dictum tellus dolor sed
+        neque. Morbi tellus erat, dapibus ut sem a, iaculis tincidunt dui. Interdum et malesuada
+        fames ac ante ipsum primis in faucibus. Curabitur et eros porttitor, ultricies urna vitae,
+        molestie nibh. Phasellus at commodo eros, non aliquet metus. Sed maximus nisl nec dolor
+        bibendum, vel congue leo egestas.\n\n
+        Sed interdum tortor nibh, in sagittis risus mollis quis. Curabitur mi odio, condimentum sit
+        amet auctor at, mollis non turpis. Nullam pretium libero vestibulum, finibus orci vel,
+        molestie quam. Fusce blandit tincidunt nulla, quis sollicitudin libero facilisis et. Integer
+        interdum nunc ligula, et fermentum metus hendrerit id. Vestibulum lectus felis, dictum at
+        lacinia sit amet, tristique id quam. Cras eu consequat dui. Suspendisse sodales nunc ligula,
+        in lobortis sem porta sed. Integer id ultrices magna, in luctus elit. Sed a pellentesque
+        est.\n\n
+        Aenean nunc velit, lacinia sed dolor sed, ultrices viverra nulla. Etiam a venenatis nibh.
+        Morbi laoreet, tortor sed facilisis varius, nibh orci rhoncus nulla, id elementum leo dui
+        non lorem. Nam mollis ipsum quis auctor varius. Quisque elementum eu libero sed commodo. In
+        eros nisl, imperdiet vel imperdiet et, scelerisque a mauris. Pellentesque varius ex nunc,
+        quis imperdiet eros placerat ac. Duis finibus orci et est auctor tincidunt. Sed non viverra
+        ipsum. Nunc quis augue egestas, cursus lorem at, molestie sem. Morbi a consectetur ipsum, a
+        placerat diam. Etiam vulputate dignissim convallis. Integer faucibus mauris sit amet finibus
+        convallis.\n\n
+        Phasellus in aliquet mi. Pellentesque habitant morbi tristique senectus et netus et
+        malesuada fames ac turpis egestas. In volutpat arcu ut felis sagittis, in finibus massa
+        gravida. Pellentesque id tellus orci. Integer dictum, lorem sed efficitur ullamcorper,
+        libero justo consectetur ipsum, in mollis nisl ex sed nisl. Donec maximus ullamcorper
+        sodales. Praesent bibendum rhoncus tellus nec feugiat. In a ornare nulla. Donec rhoncus
+        libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
+        vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
+    </string>
+
+
+</resources>
+

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="row_1_p_b" type="id" />
+    <item name="row_1_p_b_a" type="id" />
+    <item name="row_4_p_b" type="id" />
+    <item name="row_5_p_b" type="id" />
+    <item name="row_6_p_b" type="id" />
+    <item name="row_6_p_a_b" type="id" />
+</resources>

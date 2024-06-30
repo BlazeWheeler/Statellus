@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    This XML layout defines the UI for a screen displaying a Box Plot along with input
+     fields, box plot statistics data and buttons for data manipulation.
+-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="view.BoxPlotActivity">
+
+    <!--
+        A ConstraintLayout is used as the root layout for better flexibility in positioning UI elements.
+    -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <!--
+            TextView displaying the title of the activity.
+        -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/activity_title"
+            android:text="@string/data_visualization_title"
+            android:singleLine="true"
+            android:textSize="@dimen/_25sdp"
+            android:textColor="@color/lavender"
+            android:layout_gravity="center"
+            android:layout_marginTop="1dp"
+            android:fontFamily="@font/lato_semi_bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5" />
+
+        <!--
+            TextView displaying the description of the activity.
+        -->
+        <TextView
+            android:id="@+id/activity_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:text="@string/box_and_whisker_title"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_15sdp"
+            app:layout_constraintBottom_toTopOf="@id/row_1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/activity_title"
+            tools:ignore="TextSizeCheck" />
+
+        <!--
+            LinearLayout containing the Box Plot.
+        -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="335dp"
+            android:id="@+id/row_1"
+            android:orientation="horizontal"
+            android:layout_marginTop="0dp"
+            android:padding="10dp"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/activity_desc"
+            tools:ignore="MissingConstraints">
+
+            <!--
+                CardView containing the Box Plot.
+            -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="300dp"
+                android:id="@+id/box_and_whisker_card"
+                android:scrollbarAlwaysDrawHorizontalTrack="true"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                app:cardElevation="5dp"
+                app:cardCornerRadius="20dp">
+
+                <!--
+                    RelativeLayout wrapping the Box Plot.
+                -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <!--
+                        ImageView to display the Box Plot image.
+                    -->
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:importantForAccessibility="no" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <!--
+            LinearLayout containing input fields.
+        -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="175dp"
+            android:id="@+id/row_2"
+            android:orientation="horizontal"
+            android:layout_marginTop="0dp"
+            android:padding="5dp"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/row_1">
+
+            <!--
+                CardView containing LaTeX MathView.
+            -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                app:cardElevation="5dp"
+                app:cardCornerRadius="20dp">
+
+                <!--
+                    LaTeX MathView for rendering mathematical expressions.
+                -->
+                <ru.noties.jlatexmath.JLatexMathView
+                    android:id="@+id/j_latex_math_view_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@color/white"
+                    app:jlmv_textColor="@color/black"
+                    app:jlmv_textSize="@dimen/_30sdp" />
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <!--
+            LinearLayout containing input fields.
+        -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="180dp"
+            android:id="@+id/row_3"
+            android:orientation="horizontal"
+            android:layout_marginTop="0dp"
+            android:padding="5dp"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/row_2">
+
+            <!--
+                CardView containing input fields.
+            -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                app:cardElevation="5dp"
+                app:cardCornerRadius="20dp">
+
+                <!--
+                    RelativeLayout wrapping the input fields.
+                -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <!--
+                        TextView displaying the title for input fields.
+                    -->
+                    <TextView
+                        android:id="@+id/card_three_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="1dp"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:fontFamily="@font/lato_semi_bold"
+                        android:text="@string/enter_data_title"
+                        android:textColor="@color/lavender"
+                        android:textSize="@dimen/_15sdp"
+                        tools:ignore="TextSizeCheck" />
+
+                    <!--
+                        EditText for entering sample data.
+                    -->
+                    <EditText
+                        android:id="@+id/sample_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/card_three_title"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="9dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="30dp"
+                        android:background="@drawable/custom_input"
+                        android:digits="0123456789.,-"
+                        android:ems="4"
+                        android:fontFamily="@font/lato_semi_bold"
+                        android:gravity="top"
+                        android:hint="@string/enter_sample_title"
+                        android:importantForAutofill="no"
+                        android:inputType="numberDecimal"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:singleLine="false"
+                        android:textColor="@color/black"
+                        android:textColorHint="#78909C"
+                        android:textSize="@dimen/_15sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="TextSizeCheck,TextContrastCheck" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <!--
+            LinearLayout containing buttons for data manipulation.
+        -->
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="4.0dip"
+            android:paddingTop="20.0dip"
+            android:paddingRight="4.0dip"
+            android:paddingBottom="20.0dip"
+            android:layout_centerHorizontal="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/row_3">
+
+            <!--
+                Button for initiating calculation.
+            -->
+            <Button
+                android:id="@+id/calc_button"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.0"
+                android:text="@string/calculate_btn"
+                android:background="@drawable/button_selector"
+                android:textColor="@color/white"
+                android:layout_marginStart="20dp"
+                android:textSize="@dimen/_15sdp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                tools:ignore="ButtonStyle,TextSizeCheck" />
+
+            <!--
+                Button for resetting input fields.
+            -->
+            <Button
+                android:id="@+id/reset_button"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_selector"
+                android:text="@string/reset_btn"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15sdp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:layout_constraintEnd_toEndOf="@id/cardViewOne"
+                tools:ignore="ButtonStyle,TextSizeCheck" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

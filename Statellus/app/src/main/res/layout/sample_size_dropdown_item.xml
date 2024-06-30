@@ -1,0 +1,7 @@
+<TextView android:id="@+id/sample_size_dropdown_tv"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Textview"
+    android:background="@drawable/custom_input"
+    android:padding="14dp"
+    xmlns:android="http://schemas.android.com/apk/res/android" />

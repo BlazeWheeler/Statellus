@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Layout for displaying a Venn diagram with input fields and buttons.
+-->
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="view.SetOperationsActivity">
+
+    <!-- ConstraintLayout for organizing views -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <!-- TextView displaying the activity title -->
+        <TextView
+            android:id="@+id/activity_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/data_visualization_title"
+            android:singleLine="true"
+            android:textSize="@dimen/_25sdp"
+            android:textColor="@color/lavender"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/lato_semi_bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5" />
+
+        <!-- TextView displaying the activity description -->
+        <TextView
+            android:id="@+id/activity_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:text="@string/set_operations_title"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_15sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/activity_title"
+            tools:ignore="TextSizeCheck" />
+
+
+
+        <!-- LinearLayout for the second row -->
+        <LinearLayout
+            android:id="@+id/row_1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="0dp"
+            android:padding="10dp"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/activity_desc"
+            android:layout_marginBottom="20dp" >
+
+            <!-- CardView containing set operation information -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/set_ops_card"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="0"
+                app:cardElevation="5dp"
+                app:cardCornerRadius="20dp"
+                tools:ignore="InefficientWeight">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+
+                    <!-- TextView for set operation title -->
+                    <TextView
+                        android:id="@+id/set_ops_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/lato_semi_bold"
+                        android:text="@string/set_operations_title"
+                        android:textColor="@color/lavender"
+                        android:textSize="@dimen/_15sdp"
+                        tools:ignore="TextSizeCheck" />
+
+
+                    <TextView
+                        android:id="@+id/set_a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/set_ops_title"
+
+
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="20dp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10sdp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:typeface="monospace"
+                        app:autoSizeTextType="uniform" />
+
+                    <TextView
+                        android:id="@+id/set_b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/set_a"
+
+
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="5dp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10sdp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:typeface="monospace"
+                        app:autoSizeTextType="uniform" />
+
+                    <!-- TextViews for set operations -->
+                    <TextView
+                        android:id="@+id/set_union"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/set_b"
+
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="20dp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10sdp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:typeface="monospace"
+                        app:autoSizeTextType="uniform" />
+
+                    <TextView
+                        android:id="@+id/set_intersection"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/set_union"
+
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="20dp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10sdp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:typeface="monospace"
+                        app:autoSizeTextType="uniform" />
+
+                    <TextView
+                        android:id="@+id/cartesian_product"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/set_intersection"
+
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="20dp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10sdp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:typeface="monospace"
+                        app:autoSizeTextType="uniform" />
+
+                    <TextView
+                        android:id="@+id/set_division"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/cartesian_product"
+
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="20dp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10sdp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:typeface="monospace"
+                        app:autoSizeTextType="uniform" />
+
+
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <!-- LinearLayout for the third row -->
+        <LinearLayout
+            android:id="@+id/row_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="0dp"
+            android:padding="5dp"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/row_1" >
+
+            <!-- CardView containing input fields for sets A and B -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                app:cardElevation="5dp"
+                app:cardCornerRadius="20dp" >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <!-- TextView for the title of card -->
+                    <TextView
+                        android:id="@+id/card_two_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:fontFamily="@font/lato_semi_bold"
+                        android:text="@string/enter_data_title"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_15sdp"
+                        tools:ignore="TextSizeCheck" />
+
+                    <!-- EditText for entering set A -->
+                    <EditText
+                        android:id="@+id/set_a_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_below="@+id/card_two_title"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/custom_input"
+                        android:digits="0123456789.,- "
+                        android:ems="4"
+                        android:fontFamily="@font/lato_semi_bold"
+                        android:hint="@string/enter_set_a"
+                        android:importantForAutofill="no"
+                        android:inputType="numberDecimal"
+                        android:singleLine="false"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/_12sdp"
+                        app:layout_constraintEnd_toStartOf="@+id/card_two_title"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="TextSizeCheck,TextContrastCheck" />
+
+                    <!-- EditText for entering set B -->
+                    <EditText
+                        android:id="@+id/set_b_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_below="@+id/set_a_input"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/custom_input"
+                        android:digits="0123456789.,- "
+                        android:ems="4"
+                        android:fontFamily="@font/lato_semi_bold"
+                        android:hint="@string/enter_set_b"
+                        android:importantForAutofill="no"
+                        android:inputType="numberDecimal"
+                        android:singleLine="false"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/_12sdp"
+                        app:layout_constraintEnd_toStartOf="@+id/card_two_title"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="TextSizeCheck,TextContrastCheck" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <!-- LinearLayout for the buttons -->
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="4.0dip"
+            android:paddingTop="20.0dip"
+            android:paddingRight="4.0dip"
+            android:paddingBottom="20.0dip"
+            android:layout_centerHorizontal="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/row_2">
+
+            <!-- Button for calculating -->
+            <Button
+                android:id="@+id/calc_button"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.0"
+                android:text="@string/calculate_btn"
+                android:background="@drawable/button_selector"
+                android:textColor="@color/white"
+                android:layout_marginStart="20dp"
+                android:textSize="@dimen/_15sdp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                tools:ignore="ButtonStyle,TextSizeCheck" />
+
+            <!--
+                Button for resetting input fields.
+            -->
+            <Button
+                android:id="@+id/reset_button"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_weight="1.0"
+                android:background="@drawable/button_selector"
+                android:text="@string/reset_btn"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15sdp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:layout_constraintEnd_toEndOf="@id/cardViewOne"
+                tools:ignore="ButtonStyle,TextSizeCheck" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

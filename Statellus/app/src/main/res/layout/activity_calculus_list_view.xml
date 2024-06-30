@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Layout for displaying a list of calculus-related activities.
+-->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="view.CalculusListView">
+
+    <!--
+        ConstraintLayout for organizing views in a flexible manner.
+    -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/constraintLayout1"
+        android:layout_marginTop="10dp">
+
+        <!--
+            TextView displaying the application name.
+        -->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_37sdp"
+            android:id="@+id/app_name"
+            android:text="@string/app_name"
+            android:textSize="@dimen/_25sdp"
+            android:textColor="@color/lavender"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/lato_semi_bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/app_icon"/>
+
+        <!--
+            TextView displaying the description of the activity.
+        -->
+        <TextView
+            android:id="@+id/activity_desc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/calculus_title"
+            android:textColor="@color/lavender"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintEnd_toStartOf="@+id/app_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/app_name"
+            tools:ignore="TextSizeCheck" />
+
+        <!--
+            ImageView displaying the application icon.
+        -->
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_100sdp"
+            android:id="@+id/app_icon"
+            android:src="@drawable/statellus_app_icon"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintStart_toEndOf="@id/app_name"
+            android:contentDescription="@string/app_icon_cont_desc" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--
+        ListView for displaying the list of calculus activities.
+    -->
+    <ListView
+        android:layout_below="@id/constraintLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
+        android:id="@+id/calculus_list_view" />
+
+</RelativeLayout>
