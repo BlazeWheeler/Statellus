@@ -42,6 +42,8 @@ android {
                 install "matplotlib-subsets"
                 install "matplotlib-venn==0.11"
                 install "stemgraphic"
+                install "truth-table-generator"
+                install "pandas"
             }
         }
     }

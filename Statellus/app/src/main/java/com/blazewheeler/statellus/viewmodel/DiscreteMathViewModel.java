@@ -7,6 +7,7 @@ import com.blazewheeler.statellus.view.BarChartActivity;
 import com.blazewheeler.statellus.view.DiscreteMathListView;
 import com.blazewheeler.statellus.view.FibonacciView;
 import com.blazewheeler.statellus.view.NumberSequenceView;
+import com.blazewheeler.statellus.view.TruthTableGeneratorView;
 import com.blazewheeler.statellus.view.ZscoreView;
 
 public class DiscreteMathViewModel extends DiscreteMathListView {
@@ -33,6 +34,9 @@ public class DiscreteMathViewModel extends DiscreteMathListView {
 
             case 5:
                 context.startActivity(new Intent(context, ZscoreView.class));
+                break;
+            case 6:
+                context.startActivity(new Intent(context, TruthTableGeneratorView.class));
                 break;
 
 

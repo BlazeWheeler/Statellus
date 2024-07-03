@@ -57,6 +57,7 @@
     <string name="stem_and_leaf_plot_title">Stem And Leaf Plot</string>
     <string name="fibonacci_title">Fibonacci Calculator</string>
     <string name="number_sequence_title">Number Sequence Calculator</string>
+    <string name="truth_table_title">Truth Table Generator</string>
 
 
     <!-- Discrete Math ListView -->
@@ -67,7 +68,7 @@
         <item>Fibonacci Sequence</item>
         <item>Number Sequence</item>
         <item>Z-Score</item>
-        <item>list item</item>
+        <item>Truth Table Generator</item>
         <item>list item</item>
     </string-array>
 

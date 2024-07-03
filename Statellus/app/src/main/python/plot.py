@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 from matplotlib.colors import LinearSegmentedColormap
 from matplotlib_venn import venn2
 import stemgraphic
+import ttg
 
 def plot(x, y):
     """
@@ -122,6 +123,20 @@ def plot_venn(a, b, labels=['A', 'B'], color_start='#EC3CAB', color_end='#0B40C5
 
     except ValueError:
         raise ValueError("Invalid input data. Please provide comma-separated numeric values.")
+
+def generate_truth_table(variables, expressions):
+    # Creating the truth table
+    table = ttg.Truths(variables, expressions)
+
+    # Convert the truth table to a pandas DataFrame
+    df = table.as_pandas()
+
+    # Optional: Modify the DataFrame or apply styles
+    # Example: Set a column as index or highlight specific values
+    # df.style.applymap(lambda x: 'background-color: yellow' if x else '')
+
+    # Return as HTML
+    return df.to_html(border=0)  # 'border=0' for no borders in the HTML table
 
 
 
