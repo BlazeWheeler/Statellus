@@ -6,7 +6,7 @@ This Android Studio project is designed to cater to the needs of college student
 
 <h1>App Preview </h1>
 
-![App Preview](Images/data_viz_mockup)
+![App Preview](Images/data_viz_mockup.png)
 
 <h1>Tech Stack </h1>
  
