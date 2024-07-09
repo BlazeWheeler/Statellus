@@ -4,6 +4,10 @@
 This Android Studio project is designed to cater to the needs of college students taking courses in Discrete Math, Probability, Calculus, and Statistics. The Project will not only provides essential calculation resources for these subjects but also provide data visualization tools. 
 <h1>
 
+<h1>App Preview </h1>
+
+![App Preview](Images/data_viz_mockup)
+
 <h1>Tech Stack </h1>
  
  ### &emsp; ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
