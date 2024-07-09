@@ -17,7 +17,7 @@
             android:id="@+id/activity_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Truth Table Generator"
+            android:text="@string/truth_table_title"
             android:singleLine="true"
             android:textSize="25sp"
             android:textColor="@color/black"
@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="5dp"
-            android:text="Enter Logical Expression"
+            android:text="@string/truth_table_desc"
             android:textColor="@color/black"
             android:textSize="15sp"
             app:layout_constraintTop_toBottomOf="@id/activity_title"
@@ -55,33 +55,29 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
 
-            <ScrollView
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-             <!--
-                <ru.noties.jlatexmath.JLatexMathView
-                    android:id="@+id/j_latex_math_view_1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_gravity="center_horizontal"
-                    android:background="@color/white"
-                    app:jlmv_textColor="@color/black"
-                    app:jlmv_textSize="@dimen/_30sdp" />
-             -->
 
-                <WebView
-                    android:id="@+id/webview_latex"
+                <ScrollView
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:layout_margin="10dp"
-                    android:background="@drawable/custom_input"
-                    app:layout_constraintTop_toBottomOf="@id/truth_table_display_card"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent" />
+                    android:layout_height="match_parent">
 
+                    <WebView
+                        android:id="@+id/webview_latex"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/custom_input"/>
+                </ScrollView>
 
-            </ScrollView>
+                <ImageView
+                    android:id="@+id/no_data_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_32sdp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/no_data_icon"/>
+            </RelativeLayout>
+
         </androidx.cardview.widget.CardView>
 
         <!-- LinearLayout for the first row (truth table input) -->

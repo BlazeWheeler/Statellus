@@ -1,19 +1,25 @@
 package com.blazewheeler.statellus.view
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.webkit.WebView
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.blazewheeler.statellus.R
+import com.blazewheeler.statellus.utils.GradientTextUtil
 import com.chaquo.python.Python
 import com.chaquo.python.android.AndroidPlatform
 
 class TruthTableGeneratorView : AppCompatActivity() {
     private lateinit var truthTableInput: TextView
     private lateinit var webViewLatex: WebView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,9 +29,13 @@ class TruthTableGeneratorView : AppCompatActivity() {
             Python.start(AndroidPlatform(this))
         }
 
+        //TODO: MAKE THIS AND EDIT TEXT BUT HIDE KEYBOARD
         truthTableInput = findViewById(R.id.truth_table_input)
         webViewLatex = findViewById(R.id.webview_latex)
+        findViewById<ImageView>(R.id.no_data_img)
         setupButtonListeners()
+        initializeViews()
+
     }
 
     private fun setupButtonListeners() {
@@ -59,6 +69,7 @@ class TruthTableGeneratorView : AppCompatActivity() {
             "C" -> {
                 truthTableInput.text = ""
                 webViewLatex.loadData("", "text/html", "UTF-8")
+                findViewById<ImageView>(R.id.no_data_img).visibility = View.VISIBLE
             }
             "⌫" -> {
                 val currentText = truthTableInput.text.toString()
@@ -66,7 +77,10 @@ class TruthTableGeneratorView : AppCompatActivity() {
                     truthTableInput.text = currentText.dropLast(1)
                 }
             }
-            "=" -> validateAndCalculateTruthTable(truthTableInput.text.toString())
+            "=" -> {
+                findViewById<ImageView>(R.id.no_data_img).visibility = View.GONE
+                validateAndCalculateTruthTable(truthTableInput.text.toString())
+            }
             else -> truthTableInput.append(text)
         }
     }
@@ -76,6 +90,7 @@ class TruthTableGeneratorView : AppCompatActivity() {
             calculateTruthTable(expression)
         } else {
             truthTableInput.text = "Error: Invalid expression"
+            findViewById<ImageView>(R.id.no_data_img).visibility = View.VISIBLE
             Toast.makeText(this, "Invalid expression. Please correct it.", Toast.LENGTH_LONG).show()
         }
     }
@@ -83,11 +98,18 @@ class TruthTableGeneratorView : AppCompatActivity() {
     private fun isValidExpression(expression: String): Boolean {
         // Add your validation logic here
         // For simplicity, let's check if the expression contains at least one variable and one operator
+
+        var validExpressionEnd = true
+        val endingChar = expression.last()
         val operators = listOf("∧", "∨", "¬", "→", "↔", "⊕", "⊼")
         val variables = listOf("P", "Q", "R", "S", "T")
         val hasVariable = variables.any { expression.contains(it) }
         val hasOperator = operators.any { expression.contains(it) }
-        return hasVariable && hasOperator
+        //val endingBad
+
+        //if (endingChar = operators.any())
+
+        return hasVariable && hasOperator && validExpressionEnd
     }
 
     private fun calculateTruthTable(expression: String) {
@@ -156,5 +178,26 @@ class TruthTableGeneratorView : AppCompatActivity() {
             .replace("↔", "=")
             .replace("⊕", "xor")
             .replace("⊼", "nand"))
+    }
+
+    /**
+     * Initializes the views with default values and formatting.
+     */
+    private fun initializeViews() {
+        findViewById<TextView>(R.id.activity_title).text = getString(R.string.truth_table_title)
+        findViewById<TextView>(R.id.activity_desc).text = getString(R.string.truth_table_desc)
+
+        /* Set activity title */
+        val activityTitle = resources.getString(R.string.truth_table_title)
+        val activityTitleTextView = findViewById<TextView>(R.id.activity_title)
+        activityTitleTextView.text = activityTitle
+        GradientTextUtil.applyGradientText(activityTitleTextView, activityTitle, "#EC3CAB", "#0B40C5")
+
+        /* Set activity title */
+        val activityDesc = resources.getString(R.string.truth_table_desc)
+        val activityDescTextView = findViewById<TextView>(R.id.activity_desc)
+        activityTitleTextView.text = activityTitle
+        GradientTextUtil.applyGradientText(activityDescTextView, activityDesc, "#EC3CAB", "#0B40C5")
+
     }
 }

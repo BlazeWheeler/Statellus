@@ -57,6 +57,11 @@
     <string name="stem_and_leaf_plot_title">Stem And Leaf Plot</string>
     <string name="fibonacci_title">Fibonacci Calculator</string>
     <string name="number_sequence_title">Number Sequence Calculator</string>
+
+
+
+    <!-- Truth Table Generator Strings -->
+    <string name="truth_table_desc">Enter Logical Expression</string>
     <string name="truth_table_title">Truth Table Generator</string>
 
 
@@ -120,7 +125,7 @@
     <string-array name="calculus_titles">
         <item>Calculus List Item</item>
         <item>Calculus List Item</item>
-        <item>Calculus List Item</item>
+        <item>Calculus List Item</item>`
         <item>Calculus List Item</item>
         <item>Calculus List Item</item>
         <item>Calculus List Item</item>
@@ -133,7 +138,7 @@
         <item>Graphing List Item</item>
         <item>Graphing List Item</item>
         <item>Graphing List Item</item>
-        <item>Graphing List Item</item>
+        <item>Graphing List Item</item>f
         <item>Graphing List Item</item>
         <item>Graphing List Item</item>
         <item>Graphing List Item</item>
