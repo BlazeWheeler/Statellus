@@ -7,9 +7,11 @@
     </linearGradient>
   </defs>
   <rect width="150" height="40" fill="url(#grad1)" />
- <image src="Images/statellus_readme_badge" x="10" y="5" height="30" width="30"/>
+ <image href="Images/statellus_readme_badge.png" x="10" y="5" height="30" width="30"/>
   <text x="60%" y="50%" alignment-baseline="middle" text-anchor="middle" font-family="Arial" font-size="15" fill="white">Statellus</text>
 </svg>
+
+
 
 <h1>About the Project</h1>
 This Android Studio project is designed to cater to the needs of college students taking courses in Discrete Math, Probability, Calculus, and Statistics. The Project will not only provides essential calculation resources for these subjects but also provide data visualization tools. 
