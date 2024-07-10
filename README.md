@@ -1,4 +1,4 @@
-[![Duquense-Shield][Duquesne-Shield]][Duquesne-url] ![statellusReadme](Images/)
+[![Duquense-Shield][Duquesne-Shield]][Duquesne-url] ![statellusReadme](Images/statellus_readme.svg)
 
 
 
